@@ -1,0 +1,151 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* Fuente moderna */
+    color: #eaeaea; /* Texto claro en contraste con el fondo oscuro */
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url('https://images.unsplash.com/photo-1537944434965-cf4679d1a598?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80') no-repeat center center fixed; /* Fondo de NYC por la noche */
+    background-size: cover; /* Ajusta el fondo para cubrir toda la pantalla */
+    overflow-x: hidden; /* Evita desbordamientos horizontales */
+}
+
+/* Capa oscura para mejorar la legibilidad */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Capa oscura semitransparente */
+    z-index: -1; /* Mantén el fondo detrás del contenido */
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: #ffffff; /* Blanco para destacar sobre el fondo oscuro */
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    font-weight: 800; /* Negrita para destacar */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Sombra ligera para profundidad */
+}
+
+p {
+    font-size: 1.2rem;
+    color: #eaeaea; /* Gris claro para subtítulos */
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+/* Contenedor principal */
+main {
+    width: 100%;
+    max-width: 500px; /* Ancho limitado para mantenerlo limpio */
+    background: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque para el fondo */
+    border-radius: 12px; /* Bordes redondeados */
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Sombra pronunciada */
+}
+
+div {
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #ffffff; /* Texto blanco */
+    background: linear-gradient(135deg, #000000, #4b4b4b); /* Gradiente oscuro profesional */
+    padding: 15px 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra inicial */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de onda al hacer clic */
+a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+}
+
+a:active::before {
+    width: 200%;
+    height: 200%;
+    opacity: 1;
+}
+
+a:hover {
+    transform: translateY(-5px); /* Elevación al pasar el mouse */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+    background: linear-gradient(135deg, #1b2631, #000000); /* Cambio sutil en el gradiente */
+}
+
+a:active {
+    transform: translateY(0); /* Regresa a la posición original */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra reducida al hacer clic */
+}
+
+/* Separadores entre secciones */
+div::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2); /* Línea separadora suave */
+    margin-top: 10px;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    a {
+        font-size: 1rem;
+        padding: 12px 15px;
+    }
+}
