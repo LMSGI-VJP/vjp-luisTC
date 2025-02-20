@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -16,14 +15,13 @@ body {
     min-height: 100vh;
     background: url('https://images.unsplash.com/photo-1537944434965-cf4679d1a598?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80') no-repeat center center fixed; /* Fondo de NYC por la noche */
     background-size: cover; /* Ajusta el fondo para cubrir toda la pantalla */
-    overflow-x: hidden; /* Evita desbordamientos horizontales */
+   
 }
 
 /* Capa oscura para mejorar la legibilidad */
 body::before {
     content: '';
     position: absolute;
-    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -43,7 +41,6 @@ h1 {
 
 p {
     font-size: 1.2rem;
-    color: #eaeaea; /* Gris claro para subtítulos */
     text-align: center;
     margin-bottom: 30px;
     line-height: 1.4;
@@ -64,7 +61,7 @@ main {
 }
 
 div {
-    width: 100%;
+    width: fit-content;
     margin-bottom: 20px;
     position: relative;
 }
@@ -75,7 +72,7 @@ a {
     justify-content: center;
     text-decoration: none;
     color: #ffffff; /* Texto blanco */
-    background: linear-gradient(135deg, #000000, #4b4b4b); /* Gradiente oscuro profesional */
+    background: linear-gradient(135deg, #000000, #4b4b4b); 
     padding: 15px 20px;
     border-radius: 8px; /* Bordes redondeados */
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
@@ -112,7 +109,7 @@ a:active::before {
 a:hover {
     transform: translateY(-5px); /* Elevación al pasar el mouse */
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
-    background: linear-gradient(135deg, #1b2631, #000000); /* Cambio sutil en el gradiente */
+    background: linear-gradient(135deg, #1b2631, #000000); 
 }
 
 a:active {
@@ -128,24 +125,4 @@ div::after {
     height: 1px;
     background: rgba(255, 255, 255, 0.2); /* Línea separadora suave */
     margin-top: 10px;
-}
-
-/* Diseño responsivo */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 3rem;
-    }
-
-    p {
-        font-size: 1.1rem;
-    }
-
-    main {
-        padding: 20px;
-    }
-
-    a {
-        font-size: 1rem;
-        padding: 12px 15px;
-    }
 }
