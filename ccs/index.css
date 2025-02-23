@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Roboto', Arial, sans-serif; /* Fuente moderna */
+    font-family: 'Roboto', times, sans-serif; /* Fuente moderna */
     color: #eaeaea; /* Texto claro en contraste con el fondo oscuro */
     line-height: 1.6;
     display: flex;
@@ -75,8 +75,6 @@ a {
     background: linear-gradient(135deg, #000000, #4b4b4b); 
     padding: 15px 20px;
     border-radius: 8px; /* Bordes redondeados */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-    text-align: center;
     font-size: 1.1rem;
     font-weight: bold;
     letter-spacing: 1px;
